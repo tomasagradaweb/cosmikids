@@ -1,0 +1,19 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/process-orders",
+      "schedule": "0 8 */2 * *"
+    }
+  ],
+  "functions": {
+    "src/app/api/process-shopify-orders/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/generate-pdf-layered/route.ts": {
+      "maxDuration": 60
+    },
+    "src/app/api/generate-pdf/route.ts": {
+      "maxDuration": 60
+    }
+  }
+}

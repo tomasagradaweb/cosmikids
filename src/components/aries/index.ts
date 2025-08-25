@@ -1,0 +1,1 @@
+export { default as EtapaBebe } from './etapa-bebe';

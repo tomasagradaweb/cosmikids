@@ -1,0 +1,1254 @@
+
+> cosmikids@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.4.1 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.14:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 723ms
+ ○ Compiling /api/process-orders ...
+ ✓ Compiled /api/process-orders in 571ms
+ ✓ Compiled /api/generate-pdf in 69ms
+📥 Payload recibido en generate-pdf: {
+  "day": 1,
+  "month": 11,
+  "year": 1983,
+  "hour": 5,
+  "min": 20,
+  "lat": 41.3874,
+  "lon": 2.1686,
+  "tzone": 1,
+  "name": "Usuario Test",
+  "email": "cto@highdatanet.com"
+}
+🔍 Valores extraídos: {
+  day: 1,
+  month: 11,
+  year: 1983,
+  hour: 5,
+  min: 20,
+  name: 'Usuario Test',
+  email: 'cto@highdatanet.com'
+}
+📧 Debug SMTP: {
+  user: 'configurado',
+  pass: 'configurado',
+  host: 'mail.agradaweb.com',
+  port: '587'
+}
+✅ Intentando enviar email...
+✅ Email enviado exitosamente a: cto@highdatanet.com
+ POST /api/generate-pdf 200 in 5137ms
+ POST /api/process-orders 200 in 5796ms
+📥 Payload recibido en generate-pdf: {
+  "day": 1,
+  "month": 11,
+  "year": 1983,
+  "hour": 5,
+  "min": 20,
+  "lat": 41.3874,
+  "lon": 2.1686,
+  "tzone": 1,
+  "name": "Alexia",
+  "email": "cto@highdatanet.com"
+}
+🔍 Valores extraídos: {
+  day: 1,
+  month: 11,
+  year: 1983,
+  hour: 5,
+  min: 20,
+  name: 'Alexia',
+  email: 'cto@highdatanet.com'
+}
+📧 Debug SMTP: {
+  user: 'configurado',
+  pass: 'configurado',
+  host: 'mail.agradaweb.com',
+  port: '587'
+}
+✅ Intentando enviar email...
+✅ Email enviado exitosamente a: cto@highdatanet.com
+ POST /api/generate-pdf 200 in 2624ms
+ POST /api/process-orders 200 in 2643ms
+ ✓ Compiled /api/generate-pdf-mandala in 43ms
+📥 Payload recibido en generate-pdf-mandala: {
+  "day": 1,
+  "month": 11,
+  "year": 1983,
+  "hour": 5,
+  "min": 20,
+  "lat": 41.3874,
+  "lon": 2.1686,
+  "tzone": 1,
+  "name": "Alexia",
+  "email": "cto@highdatanet.com"
+}
+🔍 Valores extraídos: {
+  day: 1,
+  month: 11,
+  year: 1983,
+  hour: 5,
+  min: 20,
+  name: 'Alexia',
+  email: 'cto@highdatanet.com'
+}
+🎨 Obteniendo mandala astrológico...
+🎨 Mandala generado: https://s3.ap-south-1.amazonaws.com/western-chart/00a645a0-739a-11f0-b240-212dd8d70fb5.png
+🎨 Personalizando mandala con nombres de signos...
+✅ Mandala personalizado correctamente
+📧 Debug SMTP: {
+  user: 'configurado',
+  pass: 'configurado',
+  host: 'mail.agradaweb.com',
+  port: '587'
+}
+✅ Intentando enviar email...
+✅ Email enviado exitosamente a: cto@highdatanet.com
+ POST /api/generate-pdf-mandala 200 in 5571ms
+ ✓ Compiled /api/generate-pdf-template in 47ms
+📥 Payload recibido en generate-pdf-template: {
+  "day": 1,
+  "month": 11,
+  "year": 1983,
+  "hour": 5,
+  "min": 20,
+  "lat": 41.3874,
+  "lon": 2.1686,
+  "tzone": 1,
+  "name": "Alexia",
+  "email": "cto@highdatanet.com"
+}
+🔍 Valores extraídos: {
+  day: 1,
+  month: 11,
+  year: 1983,
+  hour: 5,
+  min: 20,
+  name: 'Alexia',
+  email: 'cto@highdatanet.com'
+}
+🎨 Creando mandala personalizado con plantilla...
+Error creando mandala personalizado: Error: No such file or directory
+    at new Promise (<anonymous>)
+    at createPersonalizedMandala (src/utils/templateMandala.ts:37:42)
+    at POST (src/app/api/generate-pdf-template/route.ts:120:68)
+  35 |     // Cargar la plantilla limpia
+  36 |     const templatePath = path.join(process.cwd(), 'public', 'limpio.png');
+> 37 |     const templateImage = await loadImage(templatePath);
+     |                                          ^
+  38 |     
+  39 |     // Crear canvas del mismo tamaño que la plantilla
+  40 |     const canvas = createCanvas(templateImage.width, templateImage.height); {
+  syscall: 'fopen',
+  path: '/Users/tomascarmonajimenez/Site/cosmikids/public/limpio.png'
+}
+Error: Error: No such file or directory
+    at new Promise (<anonymous>)
+    at createPersonalizedMandala (src/utils/templateMandala.ts:37:42)
+    at POST (src/app/api/generate-pdf-template/route.ts:120:68)
+  35 |     // Cargar la plantilla limpia
+  36 |     const templatePath = path.join(process.cwd(), 'public', 'limpio.png');
+> 37 |     const templateImage = await loadImage(templatePath);
+     |                                          ^
+  38 |     
+  39 |     // Crear canvas del mismo tamaño que la plantilla
+  40 |     const canvas = createCanvas(templateImage.width, templateImage.height); {
+  syscall: 'fopen',
+  path: '/Users/tomascarmonajimenez/Site/cosmikids/public/limpio.png'
+}
+ POST /api/generate-pdf-template 500 in 1061ms
+ ✓ Compiled /api/generate-pdf-layered in 46ms
+✅ Fuentes registradas exitosamente (incluida Rosmatika)
+📥 Payload recibido en generate-pdf-layered: {
+  "day": 1,
+  "month": 11,
+  "year": 1983,
+  "hour": 5,
+  "min": 20,
+  "lat": 41.3851,
+  "lon": 2.1734,
+  "tzone": 1,
+  "name": "Alexia",
+  "email": "cto@highdatanet.com",
+  "birthPlace": "Barcelona"
+}
+🔍 === RESPUESTA COMPLETA DE LA API ASTROLÓGICA ===
+📊 horoscopeData completo: {
+  "planets": [
+    {
+      "name": "Sun",
+      "full_degree": 218.1692,
+      "norm_degree": 8.1692,
+      "speed": 1.0006,
+      "is_retro": "false",
+      "sign_id": 8,
+      "sign": "Scorpio",
+      "house": 1
+    },
+    {
+      "name": "Moon",
+      "full_degree": 168.4704,
+      "norm_degree": 18.4704,
+      "speed": 14.432,
+      "is_retro": "false",
+      "sign_id": 6,
+      "sign": "Virgo",
+      "house": 11
+    },
+    {
+      "name": "Mars",
+      "full_degree": 169.7105,
+      "norm_degree": 19.7105,
+      "speed": 0.6029,
+      "is_retro": "false",
+      "sign_id": 6,
+      "sign": "Virgo",
+      "house": 12
+    },
+    {
+      "name": "Mercury",
+      "full_degree": 219.1163,
+      "norm_degree": 9.1163,
+      "speed": 1.6281,
+      "is_retro": "false",
+      "sign_id": 8,
+      "sign": "Scorpio",
+      "house": 1
+    },
+    {
+      "name": "Jupiter",
+      "full_degree": 252.4408,
+      "norm_degree": 12.4408,
+      "speed": 0.2047,
+      "is_retro": "false",
+      "sign_id": 9,
+      "sign": "Sagittarius",
+      "house": 3
+    },
+    {
+      "name": "Venus",
+      "full_degree": 171.6739,
+      "norm_degree": 21.6739,
+      "speed": 0.9752,
+      "is_retro": "false",
+      "sign_id": 6,
+      "sign": "Virgo",
+      "house": 12
+    },
+    {
+      "name": "Saturn",
+      "full_degree": 217.3484,
+      "norm_degree": 7.3484,
+      "speed": 0.1206,
+      "is_retro": "false",
+      "sign_id": 8,
+      "sign": "Scorpio",
+      "house": 1
+    },
+    {
+      "name": "Uranus",
+      "full_degree": 247.5156,
+      "norm_degree": 7.5156,
+      "speed": 0.0555,
+      "is_retro": "false",
+      "sign_id": 9,
+      "sign": "Sagittarius",
+      "house": 2
+    },
+    {
+      "name": "Neptune",
+      "full_degree": 267.2294,
+      "norm_degree": 27.2294,
+      "speed": 0.0272,
+      "is_retro": "false",
+      "sign_id": 9,
+      "sign": "Sagittarius",
+      "house": 3
+    },
+    {
+      "name": "Pluto",
+      "full_degree": 209.8128,
+      "norm_degree": 29.8128,
+      "speed": 0.04,
+      "is_retro": "false",
+      "sign_id": 7,
+      "sign": "Libra",
+      "house": 1
+    },
+    {
+      "name": "Node",
+      "full_degree": 76.5693,
+      "norm_degree": 16.5693,
+      "speed": -0.0831,
+      "is_retro": "true",
+      "sign_id": 3,
+      "sign": "Gemini",
+      "house": 9
+    },
+    {
+      "name": "Chiron",
+      "full_degree": 61.5029,
+      "norm_degree": 1.5029,
+      "speed": -0.0485,
+      "is_retro": "true",
+      "sign_id": 3,
+      "sign": "Gemini",
+      "house": 8
+    },
+    {
+      "name": "Part of Fortune",
+      "full_degree": 243.1444,
+      "norm_degree": 3.1444,
+      "speed": 0,
+      "is_retro": "false",
+      "sign_id": 9,
+      "sign": "Sagittarius",
+      "house": 2
+    }
+  ],
+  "houses": [
+    {
+      "house": 1,
+      "sign": "Libra",
+      "sign_id": 7,
+      "degree": 193.44556
+    },
+    {
+      "house": 2,
+      "sign": "Scorpio",
+      "sign_id": 8,
+      "degree": 220.41404
+    },
+    {
+      "house": 3,
+      "sign": "Sagittarius",
+      "sign_id": 9,
+      "degree": 251.58187
+    },
+    {
+      "house": 4,
+      "sign": "Capricorn",
+      "sign_id": 10,
+      "degree": 285.73085
+    },
+    {
+      "house": 5,
+      "sign": "Aquarius",
+      "sign_id": 11,
+      "degree": 319.21627
+    },
+    {
+      "house": 6,
+      "sign": "Pisces",
+      "sign_id": 12,
+      "degree": 348.77722
+    },
+    {
+      "house": 7,
+      "sign": "Aries",
+      "sign_id": 1,
+      "degree": 13.44556
+    },
+    {
+      "house": 8,
+      "sign": "Taurus",
+      "sign_id": 2,
+      "degree": 40.41404
+    },
+    {
+      "house": 9,
+      "sign": "Gemini",
+      "sign_id": 3,
+      "degree": 71.58187
+    },
+    {
+      "house": 10,
+      "sign": "Cancer",
+      "sign_id": 4,
+      "degree": 105.73085
+    },
+    {
+      "house": 11,
+      "sign": "Leo",
+      "sign_id": 5,
+      "degree": 139.21627
+    },
+    {
+      "house": 12,
+      "sign": "Virgo",
+      "sign_id": 6,
+      "degree": 168.77722
+    }
+  ],
+  "ascendant": 193.44556290070358,
+  "midheaven": 105.73085176535612,
+  "vertex": 34.59057451088623,
+  "lilith": {
+    "name": "Lilith",
+    "full_degree": 325.3934,
+    "norm_degree": 25.3934,
+    "speed": 0.1118,
+    "is_retro": "false",
+    "sign_id": 11,
+    "sign": "Aquarius",
+    "house": 5
+  },
+  "aspects": [
+    {
+      "aspecting_planet": "Sun",
+      "aspected_planet": "Mercury",
+      "aspecting_planet_id": 0,
+      "aspected_planet_id": 3,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 0.95,
+      "diff": 0.95
+    },
+    {
+      "aspecting_planet": "Sun",
+      "aspected_planet": "Saturn",
+      "aspecting_planet_id": 0,
+      "aspected_planet_id": 6,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 0.82,
+      "diff": 0.82
+    },
+    {
+      "aspecting_planet": "Sun",
+      "aspected_planet": "Pluto",
+      "aspecting_planet_id": 0,
+      "aspected_planet_id": 9,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 8.36,
+      "diff": 8.36
+    },
+    {
+      "aspecting_planet": "Sun",
+      "aspected_planet": "Midheaven",
+      "aspecting_planet_id": 0,
+      "aspected_planet_id": 11,
+      "aspect_type": 3,
+      "type": "Trine",
+      "orb": 7.56,
+      "diff": 112.44
+    },
+    {
+      "aspecting_planet": "Moon",
+      "aspected_planet": "Mars",
+      "aspecting_planet_id": 1,
+      "aspected_planet_id": 2,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 1.24,
+      "diff": 1.24
+    },
+    {
+      "aspecting_planet": "Moon",
+      "aspected_planet": "Jupiter",
+      "aspecting_planet_id": 1,
+      "aspected_planet_id": 4,
+      "aspect_type": 4,
+      "type": "Square",
+      "orb": 6.03,
+      "diff": 83.97
+    },
+    {
+      "aspecting_planet": "Moon",
+      "aspected_planet": "Venus",
+      "aspecting_planet_id": 1,
+      "aspected_planet_id": 5,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 3.2,
+      "diff": 3.2
+    },
+    {
+      "aspecting_planet": "Moon",
+      "aspected_planet": "Midheaven",
+      "aspecting_planet_id": 1,
+      "aspected_planet_id": 11,
+      "aspect_type": 5,
+      "type": "Sextile",
+      "orb": 2.74,
+      "diff": 62.74
+    },
+    {
+      "aspecting_planet": "Mars",
+      "aspected_planet": "Jupiter",
+      "aspecting_planet_id": 2,
+      "aspected_planet_id": 4,
+      "aspect_type": 4,
+      "type": "Square",
+      "orb": 7.27,
+      "diff": 82.73
+    },
+    {
+      "aspecting_planet": "Mars",
+      "aspected_planet": "Venus",
+      "aspecting_planet_id": 2,
+      "aspected_planet_id": 5,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 1.96,
+      "diff": 1.96
+    },
+    {
+      "aspecting_planet": "Mars",
+      "aspected_planet": "Neptune",
+      "aspecting_planet_id": 2,
+      "aspected_planet_id": 8,
+      "aspect_type": 4,
+      "type": "Square",
+      "orb": 7.52,
+      "diff": 97.52
+    },
+    {
+      "aspecting_planet": "Mars",
+      "aspected_planet": "Midheaven",
+      "aspecting_planet_id": 2,
+      "aspected_planet_id": 11,
+      "aspect_type": 5,
+      "type": "Sextile",
+      "orb": 3.98,
+      "diff": 63.98
+    },
+    {
+      "aspecting_planet": "Mercury",
+      "aspected_planet": "Saturn",
+      "aspecting_planet_id": 3,
+      "aspected_planet_id": 6,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 1.77,
+      "diff": 1.77
+    },
+    {
+      "aspecting_planet": "Mercury",
+      "aspected_planet": "Pluto",
+      "aspecting_planet_id": 3,
+      "aspected_planet_id": 9,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 9.3,
+      "diff": 9.3
+    },
+    {
+      "aspecting_planet": "Mercury",
+      "aspected_planet": "Midheaven",
+      "aspecting_planet_id": 3,
+      "aspected_planet_id": 11,
+      "aspect_type": 3,
+      "type": "Trine",
+      "orb": 6.61,
+      "diff": 113.39
+    },
+    {
+      "aspecting_planet": "Jupiter",
+      "aspected_planet": "Uranus",
+      "aspecting_planet_id": 4,
+      "aspected_planet_id": 7,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 4.93,
+      "diff": 4.93
+    },
+    {
+      "aspecting_planet": "Jupiter",
+      "aspected_planet": "Ascendant",
+      "aspecting_planet_id": 4,
+      "aspected_planet_id": 10,
+      "aspect_type": 5,
+      "type": "Sextile",
+      "orb": 1,
+      "diff": 59
+    },
+    {
+      "aspecting_planet": "Venus",
+      "aspected_planet": "Neptune",
+      "aspecting_planet_id": 5,
+      "aspected_planet_id": 8,
+      "aspect_type": 4,
+      "type": "Square",
+      "orb": 5.56,
+      "diff": 95.56
+    },
+    {
+      "aspecting_planet": "Venus",
+      "aspected_planet": "Midheaven",
+      "aspecting_planet_id": 5,
+      "aspected_planet_id": 11,
+      "aspect_type": 5,
+      "type": "Sextile",
+      "orb": 5.94,
+      "diff": 65.94
+    },
+    {
+      "aspecting_planet": "Saturn",
+      "aspected_planet": "Pluto",
+      "aspecting_planet_id": 6,
+      "aspected_planet_id": 9,
+      "aspect_type": 1,
+      "type": "Conjunction",
+      "orb": 7.54,
+      "diff": 7.54
+    },
+    {
+      "aspecting_planet": "Uranus",
+      "aspected_planet": "Ascendant",
+      "aspecting_planet_id": 7,
+      "aspected_planet_id": 10,
+      "aspect_type": 5,
+      "type": "Sextile",
+      "orb": 5.93,
+      "diff": 54.07
+    },
+    {
+      "aspecting_planet": "Neptune",
+      "aspected_planet": "Pluto",
+      "aspecting_planet_id": 8,
+      "aspected_planet_id": 9,
+      "aspect_type": 5,
+      "type": "Sextile",
+      "orb": 2.58,
+      "diff": 57.42
+    },
+    {
+      "aspecting_planet": "Ascendant",
+      "aspected_planet": "Midheaven",
+      "aspecting_planet_id": 10,
+      "aspected_planet_id": 11,
+      "aspect_type": 4,
+      "type": "Square",
+      "orb": 2.29,
+      "diff": 87.71
+    }
+  ]
+}
+
+📍 === ANÁLISIS DE PLANETAS ===
+Planeta 1: {
+  name: 'Sun',
+  sign: 'Scorpio',
+  norm_degree: 8.1692,
+  house: 1,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 2: {
+  name: 'Moon',
+  sign: 'Virgo',
+  norm_degree: 18.4704,
+  house: 11,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 3: {
+  name: 'Mars',
+  sign: 'Virgo',
+  norm_degree: 19.7105,
+  house: 12,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 4: {
+  name: 'Mercury',
+  sign: 'Scorpio',
+  norm_degree: 9.1163,
+  house: 1,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 5: {
+  name: 'Jupiter',
+  sign: 'Sagittarius',
+  norm_degree: 12.4408,
+  house: 3,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 6: {
+  name: 'Venus',
+  sign: 'Virgo',
+  norm_degree: 21.6739,
+  house: 12,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 7: {
+  name: 'Saturn',
+  sign: 'Scorpio',
+  norm_degree: 7.3484,
+  house: 1,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 8: {
+  name: 'Uranus',
+  sign: 'Sagittarius',
+  norm_degree: 7.5156,
+  house: 2,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 9: {
+  name: 'Neptune',
+  sign: 'Sagittarius',
+  norm_degree: 27.2294,
+  house: 3,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 10: {
+  name: 'Pluto',
+  sign: 'Libra',
+  norm_degree: 29.8128,
+  house: 1,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 11: {
+  name: 'Node',
+  sign: 'Gemini',
+  norm_degree: 16.5693,
+  house: 9,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 12: {
+  name: 'Chiron',
+  sign: 'Gemini',
+  norm_degree: 1.5029,
+  house: 8,
+  degree: undefined,
+  retrograde: undefined
+}
+Planeta 13: {
+  name: 'Part of Fortune',
+  sign: 'Sagittarius',
+  norm_degree: 3.1444,
+  house: 2,
+  degree: undefined,
+  retrograde: undefined
+}
+
+🏠 === ANÁLISIS DE CASAS ===
+Casa 1: { sign: 'Libra', degree: 193.44556, house_id: undefined }
+Casa 2: { sign: 'Scorpio', degree: 220.41404, house_id: undefined }
+Casa 3: { sign: 'Sagittarius', degree: 251.58187, house_id: undefined }
+Casa 4: { sign: 'Capricorn', degree: 285.73085, house_id: undefined }
+Casa 5: { sign: 'Aquarius', degree: 319.21627, house_id: undefined }
+Casa 6: { sign: 'Pisces', degree: 348.77722, house_id: undefined }
+Casa 7: { sign: 'Aries', degree: 13.44556, house_id: undefined }
+Casa 8: { sign: 'Taurus', degree: 40.41404, house_id: undefined }
+Casa 9: { sign: 'Gemini', degree: 71.58187, house_id: undefined }
+Casa 10: { sign: 'Cancer', degree: 105.73085, house_id: undefined }
+Casa 11: { sign: 'Leo', degree: 139.21627, house_id: undefined }
+Casa 12: { sign: 'Virgo', degree: 168.77722, house_id: undefined }
+📊 Datos extraídos usando full_degree:
+- Sol: Scorpio (218.2° totales)
+- Luna: Virgo (168.5° totales)
+- Ascendente: Libra (193.4°)
+🎨 Creando mandala con sistema de capas...
+📍 Lugar de nacimiento: Barcelona , 
+🎨 Iniciando creación de mandala con capas...
+✅ Capas base cargadas
+✅ Mandala detalles centrado en: { detallesX: 663, detallesY: 779.5 }
+♈ Dibujando signos del zodíaco en posiciones astrológicas reales...
+📊 === SIGNOS EN POSICIONES ASTROLÓGICAS REALES (CORREGIDO) ===
+🌅 Ascendente: Libra 193.45° absolutos → Casa 1 a las 9:00
+⭐ Aries:
+   - Inicio: 166.6° rel
+   - Centro: 181.6° rel → 88.4° canvas (2.9:00)
+✅ Símbolo aries_ posicionado: {
+  signo: 'Aries',
+  angulo_inicio: '166.6',
+  angulo_centro: '181.6',
+  angulo_canvas: '88.4',
+  symbolX: 1880,
+  symbolY: 1337
+}
+✅ Nombre aries posicionado: {
+  signo: 'Aries',
+  angulo_inicio: '166.6',
+  angulo_centro: '181.6',
+  angulo_canvas: '88.4',
+  nameX: 1925,
+  nameY: 1335
+}
+⭐ Taurus:
+   - Inicio: 196.6° rel
+   - Centro: 211.6° rel → 58.4° canvas (1.9:00)
+✅ Símbolo tauro_ posicionado: {
+  signo: 'Taurus',
+  angulo_inicio: '196.6',
+  angulo_centro: '211.6',
+  angulo_canvas: '58.4',
+  symbolX: 1785,
+  symbolY: 1019
+}
+✅ Nombre tauro posicionado: {
+  signo: 'Taurus',
+  angulo_inicio: '196.6',
+  angulo_centro: '211.6',
+  angulo_canvas: '58.4',
+  nameX: 1824,
+  nameY: 996
+}
+⭐ Gemini:
+   - Inicio: 226.6° rel
+   - Centro: 241.6° rel → 28.4° canvas (0.9:00)
+✅ Símbolo géminis_ posicionado: {
+  signo: 'Gemini',
+  angulo_inicio: '226.6',
+  angulo_centro: '241.6',
+  angulo_canvas: '28.4',
+  symbolX: 1545,
+  symbolY: 791
+}
+✅ Nombre géminis posicionado: {
+  signo: 'Gemini',
+  angulo_inicio: '226.6',
+  angulo_centro: '241.6',
+  angulo_canvas: '28.4',
+  nameX: 1566,
+  nameY: 752
+}
+⭐ Cancer:
+   - Inicio: 256.6° rel
+   - Centro: 271.6° rel → 358.4° canvas (11.9:00)
+✅ Símbolo cáncer_ posicionado: {
+  signo: 'Cancer',
+  angulo_inicio: '256.6',
+  angulo_centro: '271.6',
+  angulo_canvas: '358.4',
+  symbolX: 1223,
+  symbolY: 714
+}
+✅ Nombre cáncer posicionado: {
+  signo: 'Cancer',
+  angulo_inicio: '256.6',
+  angulo_centro: '271.6',
+  angulo_canvas: '358.4',
+  nameX: 1221,
+  nameY: 669
+}
+⭐ Leo:
+   - Inicio: 286.6° rel
+   - Centro: 301.6° rel → 328.4° canvas (10.9:00)
+✅ Símbolo leo_ posicionado: {
+  signo: 'Leo',
+  angulo_inicio: '286.6',
+  angulo_centro: '301.6',
+  angulo_canvas: '328.4',
+  symbolX: 905,
+  symbolY: 809
+}
+✅ Nombre leo posicionado: {
+  signo: 'Leo',
+  angulo_inicio: '286.6',
+  angulo_centro: '301.6',
+  angulo_canvas: '328.4',
+  nameX: 882,
+  nameY: 770
+}
+⭐ Virgo:
+   - Inicio: 316.6° rel
+   - Centro: 331.6° rel → 298.4° canvas (9.9:00)
+✅ Símbolo virgo_ posicionado: {
+  signo: 'Virgo',
+  angulo_inicio: '316.6',
+  angulo_centro: '331.6',
+  angulo_canvas: '298.4',
+  symbolX: 677,
+  symbolY: 1049
+}
+✅ Nombre virgo posicionado: {
+  signo: 'Virgo',
+  angulo_inicio: '316.6',
+  angulo_centro: '331.6',
+  angulo_canvas: '298.4',
+  nameX: 638,
+  nameY: 1028
+}
+⭐ Libra:
+   - Inicio: 346.6° rel
+   - Centro: 1.6° rel → 268.4° canvas (8.9:00)
+✅ Símbolo libra_ posicionado: {
+  signo: 'Libra',
+  angulo_inicio: '346.6',
+  angulo_centro: '1.6',
+  angulo_canvas: '268.4',
+  symbolX: 600,
+  symbolY: 1371
+}
+✅ Nombre libra posicionado: {
+  signo: 'Libra',
+  angulo_inicio: '346.6',
+  angulo_centro: '1.6',
+  angulo_canvas: '268.4',
+  nameX: 555,
+  nameY: 1373
+}
+⭐ Scorpio:
+   - Inicio: 16.6° rel
+   - Centro: 31.6° rel → 238.4° canvas (7.9:00)
+✅ Símbolo escorpio_ posicionado: {
+  signo: 'Scorpio',
+  angulo_inicio: '16.6',
+  angulo_centro: '31.6',
+  angulo_canvas: '238.4',
+  symbolX: 695,
+  symbolY: 1689
+}
+✅ Nombre escorpio posicionado: {
+  signo: 'Scorpio',
+  angulo_inicio: '16.6',
+  angulo_centro: '31.6',
+  angulo_canvas: '238.4',
+  nameX: 656,
+  nameY: 1712
+}
+⭐ Sagittarius:
+   - Inicio: 46.6° rel
+   - Centro: 61.6° rel → 208.4° canvas (6.9:00)
+✅ Símbolo sagitario_ posicionado: {
+  signo: 'Sagittarius',
+  angulo_inicio: '46.6',
+  angulo_centro: '61.6',
+  angulo_canvas: '208.4',
+  symbolX: 935,
+  symbolY: 1917
+}
+✅ Nombre sagitario posicionado: {
+  signo: 'Sagittarius',
+  angulo_inicio: '46.6',
+  angulo_centro: '61.6',
+  angulo_canvas: '208.4',
+  nameX: 914,
+  nameY: 1956
+}
+⭐ Capricorn:
+   - Inicio: 76.6° rel
+   - Centro: 91.6° rel → 178.4° canvas (5.9:00)
+✅ Símbolo capricornio_ posicionado: {
+  signo: 'Capricorn',
+  angulo_inicio: '76.6',
+  angulo_centro: '91.6',
+  angulo_canvas: '178.4',
+  symbolX: 1257,
+  symbolY: 1994
+}
+✅ Nombre capricornio posicionado: {
+  signo: 'Capricorn',
+  angulo_inicio: '76.6',
+  angulo_centro: '91.6',
+  angulo_canvas: '178.4',
+  nameX: 1259,
+  nameY: 2039
+}
+⭐ Aquarius:
+   - Inicio: 106.6° rel
+   - Centro: 121.6° rel → 148.4° canvas (4.9:00)
+✅ Símbolo acuario_ posicionado: {
+  signo: 'Aquarius',
+  angulo_inicio: '106.6',
+  angulo_centro: '121.6',
+  angulo_canvas: '148.4',
+  symbolX: 1575,
+  symbolY: 1899
+}
+✅ Nombre acuario posicionado: {
+  signo: 'Aquarius',
+  angulo_inicio: '106.6',
+  angulo_centro: '121.6',
+  angulo_canvas: '148.4',
+  nameX: 1598,
+  nameY: 1938
+}
+⭐ Pisces:
+   - Inicio: 136.6° rel
+   - Centro: 151.6° rel → 118.4° canvas (3.9:00)
+✅ Símbolo piscis_ posicionado: {
+  signo: 'Pisces',
+  angulo_inicio: '136.6',
+  angulo_centro: '151.6',
+  angulo_canvas: '118.4',
+  symbolX: 1803,
+  symbolY: 1659
+}
+✅ Nombre piscis posicionado: {
+  signo: 'Pisces',
+  angulo_inicio: '136.6',
+  angulo_centro: '151.6',
+  angulo_canvas: '118.4',
+  nameX: 1842,
+  nameY: 1680
+}
+🪐 Dibujando planetas en posiciones astrológicas correctas...
+🔍 SISTEMA ASTROLÓGICO PARA PLANETAS (CORREGIDO):
+- Ascendente: Libra 193.45° absolutos
+📊 === ANÁLISIS DE PLANETAS CON getPlanetAngle ===
+Total de planetas recibidos: 13
+🌌 Sun: {
+  signo: 'Scorpio',
+  grados_absolutos: '218.17',
+  grados_en_signo: '8.17',
+  angulo_relativo: '24.7',
+  angulo_canvas: '245.3',
+  posicion_horaria: '8.2:00'
+}
+🌌 Moon: {
+  signo: 'Virgo',
+  grados_absolutos: '168.47',
+  grados_en_signo: '18.47',
+  angulo_relativo: '335.0',
+  angulo_canvas: '295.0',
+  posicion_horaria: '9.8:00'
+}
+🌌 Mars: {
+  signo: 'Virgo',
+  grados_absolutos: '169.71',
+  grados_en_signo: '19.71',
+  angulo_relativo: '336.3',
+  angulo_canvas: '293.7',
+  posicion_horaria: '9.8:00'
+}
+🌌 Mercury: {
+  signo: 'Scorpio',
+  grados_absolutos: '219.12',
+  grados_en_signo: '9.12',
+  angulo_relativo: '25.7',
+  angulo_canvas: '244.3',
+  posicion_horaria: '8.1:00'
+}
+🌌 Jupiter: {
+  signo: 'Sagittarius',
+  grados_absolutos: '252.44',
+  grados_en_signo: '12.44',
+  angulo_relativo: '59.0',
+  angulo_canvas: '211.0',
+  posicion_horaria: '7.0:00'
+}
+🌌 Venus: {
+  signo: 'Virgo',
+  grados_absolutos: '171.67',
+  grados_en_signo: '21.67',
+  angulo_relativo: '338.2',
+  angulo_canvas: '291.8',
+  posicion_horaria: '9.7:00'
+}
+🌌 Saturn: {
+  signo: 'Scorpio',
+  grados_absolutos: '217.35',
+  grados_en_signo: '7.35',
+  angulo_relativo: '23.9',
+  angulo_canvas: '246.1',
+  posicion_horaria: '8.2:00'
+}
+🌌 Uranus: {
+  signo: 'Sagittarius',
+  grados_absolutos: '247.52',
+  grados_en_signo: '7.52',
+  angulo_relativo: '54.1',
+  angulo_canvas: '215.9',
+  posicion_horaria: '7.2:00'
+}
+🌌 Neptune: {
+  signo: 'Sagittarius',
+  grados_absolutos: '267.23',
+  grados_en_signo: '27.23',
+  angulo_relativo: '73.8',
+  angulo_canvas: '196.2',
+  posicion_horaria: '6.5:00'
+}
+🌌 Pluto: {
+  signo: 'Libra',
+  grados_absolutos: '209.81',
+  grados_en_signo: '29.81',
+  angulo_relativo: '16.4',
+  angulo_canvas: '253.6',
+  posicion_horaria: '8.5:00'
+}
+🌌 Node: {
+  signo: 'Gemini',
+  grados_absolutos: '76.57',
+  grados_en_signo: '16.57',
+  angulo_relativo: '243.1',
+  angulo_canvas: '26.9',
+  posicion_horaria: '0.9:00'
+}
+🌌 Chiron: {
+  signo: 'Gemini',
+  grados_absolutos: '61.50',
+  grados_en_signo: '1.50',
+  angulo_relativo: '228.1',
+  angulo_canvas: '41.9',
+  posicion_horaria: '1.4:00'
+}
+🌌 Part of Fortune: {
+  signo: 'Sagittarius',
+  grados_absolutos: '243.14',
+  grados_en_signo: '3.14',
+  angulo_relativo: '49.7',
+  angulo_canvas: '220.3',
+  posicion_horaria: '7.3:00'
+}
+☉☉☉ SOL:
+- Signo: Scorpio
+- Grados en signo: 8.1692
+- Ángulo canvas: 245.3
+- Posición horaria: 8.2:00
+- Posición X,Y: 831 1542
+✅ Planeta Sun: {
+  signo: 'Scorpio',
+  grados_en_signo: '8.17',
+  angulo_canvas: '245.3',
+  posicion_horaria: '8.2:00',
+  posicionX: 831,
+  posicionY: 1542,
+  simbolo: '☉'
+}
+🌙🌙🌙 LUNA:
+- Signo: Virgo
+- Grados en signo: 18.4704
+- Ángulo canvas: 295.0
+- Posición horaria: 9.8:00
+- Posición X,Y: 832 1164
+✅ Planeta Moon: {
+  signo: 'Virgo',
+  grados_en_signo: '18.47',
+  angulo_canvas: '295.0',
+  posicion_horaria: '9.8:00',
+  posicionX: 832,
+  posicionY: 1164,
+  simbolo: '☽'
+}
+✅ Planeta Mars: {
+  signo: 'Virgo',
+  grados_en_signo: '19.71',
+  angulo_canvas: '293.7',
+  posicion_horaria: '9.8:00',
+  posicionX: 795,
+  posicionY: 1286,
+  simbolo: '♂'
+}
+✅ Planeta Mercury: {
+  signo: 'Scorpio',
+  grados_en_signo: '9.12',
+  angulo_canvas: '244.3',
+  posicion_horaria: '8.1:00',
+  posicionX: 790,
+  posicionY: 1359,
+  simbolo: '☿'
+}
+✅ Planeta Jupiter: {
+  signo: 'Sagittarius',
+  grados_en_signo: '12.44',
+  angulo_canvas: '211.0',
+  posicion_horaria: '7.0:00',
+  posicionX: 1008,
+  posicionY: 1740,
+  simbolo: '♃'
+}
+✅ Planeta Venus: {
+  signo: 'Virgo',
+  grados_en_signo: '21.67',
+  angulo_canvas: '291.8',
+  posicion_horaria: '9.7:00',
+  posicionX: 993,
+  posicionY: 978,
+  simbolo: '♀'
+}
+✅ Planeta Saturn: {
+  signo: 'Scorpio',
+  grados_en_signo: '7.35',
+  angulo_canvas: '246.1',
+  posicion_horaria: '8.2:00',
+  posicionX: 1008,
+  posicionY: 1739,
+  simbolo: '♄'
+}
+✅ Planeta Uranus: {
+  signo: 'Sagittarius',
+  grados_en_signo: '7.52',
+  angulo_canvas: '215.9',
+  posicion_horaria: '7.2:00',
+  posicionX: 796,
+  posicionY: 1425,
+  simbolo: '♅'
+}
+✅ Planeta Neptune: {
+  signo: 'Sagittarius',
+  grados_en_signo: '27.23',
+  angulo_canvas: '196.2',
+  posicion_horaria: '6.5:00',
+  posicionX: 1114,
+  posicionY: 1786,
+  simbolo: '♆'
+}
+✅ Planeta Pluto: {
+  signo: 'Libra',
+  grados_en_signo: '29.81',
+  angulo_canvas: '253.6',
+  posicion_horaria: '8.5:00',
+  posicionX: 808,
+  posicionY: 1481,
+  simbolo: '♇'
+}
+✅ Planeta Node: {
+  signo: 'Gemini',
+  grados_en_signo: '16.57',
+  angulo_canvas: '26.9',
+  posicion_horaria: '0.9:00',
+  posicionX: 1443,
+  posicionY: 953,
+  simbolo: '☊'
+}
+✅ Planeta Chiron: {
+  signo: 'Gemini',
+  grados_en_signo: '1.50',
+  angulo_canvas: '41.9',
+  posicion_horaria: '1.4:00',
+  posicionX: 1541,
+  posicionY: 1019,
+  simbolo: '⚷'
+}
+✅ Planeta Part of Fortune: {
+  signo: 'Sagittarius',
+  grados_en_signo: '3.14',
+  angulo_canvas: '220.3',
+  posicion_horaria: '7.3:00',
+  posicionX: 949,
+  posicionY: 1697,
+  simbolo: '⊕'
+}
+🔍 === DEBUG drawAstrologicalInfo ===
+personalData recibido: {
+  "name": "Alexia",
+  "birthDate": "1 de Noviembre de 1983",
+  "birthPlace": "Barcelona",
+  "provincia": "",
+  "sunSign": "Scorpio",
+  "moonSign": "Virgo",
+  "ascendantSign": "Libra",
+  "description": ""
+}
+personalData.moonSign: Virgo
+🌙 DEBUG Mi Luna:
+- personalData.moonSign: Virgo
+- moonSignFile: virgo
+- Archivo que se busca: virgo_.png
+✅ Texto personalizado línea 1: "Proyecta armonía, necesita orden y brilla"
+✅ Texto personalizado línea 2: "cuando transforma."
+✅ Mandala con capas creado correctamente
+✅ Mandala con capas creado correctamente
+✅ Intentando enviar email...
+✅ Email enviado exitosamente a: cto@highdatanet.com
+ POST /api/generate-pdf-layered 200 in 3166ms
+[?25h
