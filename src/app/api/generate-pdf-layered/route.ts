@@ -272,16 +272,13 @@ export async function POST(request: NextRequest) {
 
     // Generar PDF
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: 'new',
       args: [
         '--no-sandbox', 
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
-        '--disable-gpu',
-        '--single-process',
-        '--no-zygote'
-      ],
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined
+        '--disable-gpu'
+      ]
     });
     
     const page = await browser.newPage();
