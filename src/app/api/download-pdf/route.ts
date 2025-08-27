@@ -236,7 +236,7 @@ export async function POST(request: NextRequest) {
     await browser.close();
 
     // Devolver el PDF como descarga
-    return new NextResponse(pdfBuffer, {
+    return new NextResponse(Buffer.from(pdfBuffer), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="carta-astral-${name.replace(/\s/g, '-').toLowerCase()}.pdf"`,

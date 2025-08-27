@@ -1,90 +1,48 @@
-import { NextResponse } from 'next/server';
-
-function getSunSignFromAPI(horoscopeData: any): string {
-  const sun = horoscopeData.planets.find((planet: any) => planet.name === 'Sol');
-  
-  if (!sun) {
-    return 'aries';
-  }
-  const signMap: { [key: string]: string } = {
-    'Aries': 'aries',
-    'Tauro': 'tauro',
-    'Géminis': 'geminis',
-    'Cáncer': 'cancer',
-    'Leo': 'leo',
-    'Virgo': 'virgo',
-    'Libra': 'libra',
-    'Escorpio': 'escorpio',
-    'Sagitario': 'sagitario',
-    'Capricornio': 'capricornio',
-    'Acuario': 'acuario',
-    'Piscis': 'piscis'
-  };
-  
-  return signMap[sun.sign] || 'aries';
-}
-
-export default async function ProcessHoroscope() {
-  const shopifyData = {
-    day: 15,
-    month: 4,
-    year: 1990,
-    hour: 10,
-    min: 30,
-    lat: 40.4168,
-    lon: -3.7038,
-    tzone: 1,
-    name: "Juan Pérez",
-    email: "juan@example.com"
-  };
-  const auth = Buffer.from(`${process.env.ASTROLOGY_USER_ID}:${process.env.ASTROLOGY_API_KEY}`).toString('base64');
-  
-  try {
-    const response = await fetch(`${process.env.ASTROLOGY_API_URL}/western_horoscope`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Basic ${auth}`,
-        'Content-Type': 'application/json',
-        'Accept-Language': 'es'
-      },
-      body: JSON.stringify({
-        day: shopifyData.day,
-        month: shopifyData.month,
-        year: shopifyData.year,
-        hour: shopifyData.hour,
-        min: shopifyData.min,
-        lat: shopifyData.lat,
-        lon: shopifyData.lon,
-        tzone: shopifyData.tzone
-      })
-    });
-
-    const horoscopeData = await response.json();
-    
-    const zodiacSign = getSunSignFromAPI(horoscopeData);
-    
-    // Cargar componentes usando el util
-    const { loadZodiacComponents } = await import('@/utils/zodiacComponents');
-    const components = await loadZodiacComponents(zodiacSign as any);
-    
-    
-    if (components.length > 0) {
-      components.forEach((_, index) => {
-        const etapas = ['Bebé', 'Niño', 'Adolescente', 'Adulto'];
-      });
-    } else {
-    }
-
-    return {
-      success: true,
-      zodiacSign,
-      horoscopeData
-    };
-
-  } catch (error) {
-    return {
-      success: false,
-      error: 'Error procesando horóscopo'
-    };
-  }
+export default function Home() {
+  return (
+    <main style={{ 
+      fontFamily: 'system-ui', 
+      padding: '2rem', 
+      textAlign: 'center',
+      background: '#f5f5f5',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
+    }}>
+      <h1 style={{ color: '#6b46c1', marginBottom: '1rem' }}>🌟 Cosmikids API</h1>
+      <p style={{ color: '#666', marginBottom: '2rem' }}>API para generación de mandalas astrológicos</p>
+      
+      <div style={{ 
+        background: 'white', 
+        padding: '2rem', 
+        borderRadius: '8px', 
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+        maxWidth: '600px',
+        margin: '0 auto'
+      }}>
+        <h2 style={{ color: '#333', marginBottom: '1rem' }}>📋 Endpoints disponibles:</h2>
+        <ul style={{ 
+          textAlign: 'left', 
+          listStyle: 'none', 
+          padding: 0, 
+          color: '#555' 
+        }}>
+          <li style={{ padding: '0.5rem 0', borderBottom: '1px solid #eee' }}>
+            <code style={{ background: '#f8f8f8', padding: '0.2rem 0.4rem' }}>/api/health</code> - Estado del sistema
+          </li>
+          <li style={{ padding: '0.5rem 0', borderBottom: '1px solid #eee' }}>
+            <code style={{ background: '#f8f8f8', padding: '0.2rem 0.4rem' }}>/api/generate-pdf-layered</code> - Generar mandala
+          </li>
+          <li style={{ padding: '0.5rem 0' }}>
+            <code style={{ background: '#f8f8f8', padding: '0.2rem 0.4rem' }}>/api/process-shopify-orders</code> - Procesar pedidos
+          </li>
+        </ul>
+      </div>
+      
+      <p style={{ color: '#999', fontSize: '0.9rem', marginTop: '2rem' }}>
+        API Version: 1.0.0 | Status: Running ✅
+      </p>
+    </main>
+  )
 }
